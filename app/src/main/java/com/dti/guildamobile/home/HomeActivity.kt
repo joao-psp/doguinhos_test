@@ -1,11 +1,13 @@
 package com.dti.guildamobile.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dti.guildamobile.R
+import com.dti.guildamobile.dogDetails.DogDetailsActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity: AppCompatActivity() {
@@ -28,7 +30,6 @@ class HomeActivity: AppCompatActivity() {
     }
 
     private fun itemCliqueRecyclerViewDog(dog: Dog) {
-        Toast.makeText(applicationContext, "CLIQUEI ${dog.id}", Toast.LENGTH_SHORT).show()
-//        startActivity(Actions.getLocalidadeIntent(this, localeId))
+        startActivity(Intent(this, DogDetailsActivity::class.java))
     }
 }
